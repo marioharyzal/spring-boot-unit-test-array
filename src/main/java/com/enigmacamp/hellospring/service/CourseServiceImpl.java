@@ -11,8 +11,11 @@ import java.util.Optional;
 @Service
 public class CourseServiceImpl implements CourseService {
 
-    @Autowired
     private CourseRepository courseRepository;
+
+    public CourseServiceImpl(CourseRepository courseRepository) {
+        this.courseRepository = courseRepository;
+    }
 
     @Override
     public List<Course> list() {
